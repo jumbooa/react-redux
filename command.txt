@@ -1,0 +1,4 @@
+git config --list
+git config --global http.proxy http://10.16.129.202:8888
+npm config set https-proxy http://10.16.129.202:8888
+npm config rm https-proxy http://10.16.129.202:8888
