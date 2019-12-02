@@ -1,2 +1,3 @@
 export const ADD_ARTICLE="ADD_ARTICLE";
 export const FORBIDDEN_WORD="FORBIDDEN_WORD";
+export const REMOTED_DATA="REMOTED_DATA";

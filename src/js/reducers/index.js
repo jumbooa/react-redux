@@ -1,7 +1,8 @@
-import {ADD_ARTICLE} from "../constants/action-type"
+import {ADD_ARTICLE , REMOTED_DATA} from "../constants/action-type"
 
 const initialState={
-    articles:[]
+    articles:[],
+    remotedData:[]
 }
 
 function rootReducer(state=initialState , action){
@@ -11,6 +12,13 @@ function rootReducer(state=initialState , action){
            articles:state.articles.concat(action.payload) 
         })
     }
+
+    if(action.type==REMOTED_DATA){
+        return Object.assign({} , state , {
+            remotedData:state.remotedData.concat(action.payload)
+        })
+    }
+    
     return state;
 }
 

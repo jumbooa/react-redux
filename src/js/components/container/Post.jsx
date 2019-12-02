@@ -2,16 +2,33 @@ import React , {Component} from "react"
 import {connect} from "react-redux"
 import {getData} from "../../actions/index"
 
-class Post extends Component{
+export class Post extends Component{
 
     componentDidMount(){
+        
         this.props.getData()
     }
 
+    
+
     render(){
-        return null
+        return (
+            <div>
+                <ul>
+                  {this.props.articles.map(el=>(
+                    <li id={el.id}>{el.title}</li>
+                  ))}  
+                </ul>
+            </div>
+        )
     }
 
 }
 
-export default connect(null , {getData})(Post)
+function mapStateToProps(state){
+    return {
+        articles:state.remotedData.slice(0,10)
+    }
+}
+
+export default connect(mapStateToProps , {getData})(Post)
